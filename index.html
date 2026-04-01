@@ -26,7 +26,8 @@
       --color-cyan-glow:   rgba(0,200,232,0.35);
 
       --color-text:        #F0F4FF;
-      --color-text-muted:  rgba(240,244,255,0.55);
+      --color-text-muted:  #A8B8D8;
+      --color-text-soft:   #8A9AB8;
 
       --font-display:      'Raleway', sans-serif;
       --font-condensed:    'Barlow Condensed', sans-serif;
@@ -74,7 +75,7 @@
 
     .label {
       font-family: var(--font-condensed);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -568,12 +569,12 @@
     }
 
     .hero-subtitle {
-      font-size: 17px;
-      font-weight: 300;
+      font-size: 19px;
+      font-weight: 400;
       color: var(--color-text-muted);
-      max-width: 520px;
+      max-width: 540px;
       margin-bottom: 32px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .hero-tags {
@@ -584,10 +585,10 @@
     }
 
     .hero-tag {
-      padding: 8px 18px;
-      border: 1px solid var(--color-border);
+      padding: 10px 22px;
+      border: 1px solid rgba(27,95,255,0.3);
       font-family: var(--font-condensed);
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -633,11 +634,11 @@
 
     .hero-stat-label {
       font-family: var(--font-condensed);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--color-text-muted);
+      color: var(--color-text-soft);
       margin-top: 6px;
     }
 
@@ -701,10 +702,11 @@
     }
 
     .form-desc {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--color-text-muted);
       margin-bottom: 28px;
-      line-height: 1.6;
+      line-height: 1.65;
+      font-weight: 400;
     }
 
     .form-group { margin-bottom: 16px; }
@@ -712,7 +714,7 @@
     .form-group label {
       display: block;
       font-family: var(--font-condensed);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -741,7 +743,7 @@
       box-shadow: 0 0 0 3px rgba(27,95,255,0.14);
     }
 
-    .form-group input::placeholder { color: rgba(107,122,153,0.7); }
+    .form-group input::placeholder { color: rgba(138,154,184,0.7); }
     .form-group select option { background: var(--color-bg-2); }
 
     .form-btn {
@@ -779,13 +781,14 @@
 
     .form-guarantee {
       text-align: center;
-      font-size: 11px;
-      color: var(--color-text-muted);
+      font-size: 13px;
+      color: var(--color-text-soft);
       margin-top: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      font-weight: 400;
     }
 
     /* ============================================================
@@ -808,11 +811,11 @@
 
     .logos-text {
       font-family: var(--font-condensed);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--color-text-muted);
+      color: var(--color-text-soft);
       white-space: nowrap;
     }
 
@@ -826,14 +829,17 @@
 
     .logo-client {
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: 0.1em;
-      color: rgba(107,122,153,0.4);
-      transition: color var(--transition);
+      color: var(--color-text-soft);
+      transition: color var(--transition), text-shadow var(--transition);
     }
 
-    .logo-client:hover { color: rgba(107,122,153,0.8); }
+    .logo-client:hover {
+      color: var(--color-text);
+      text-shadow: 0 0 20px rgba(0,200,232,0.3);
+    }
 
     /* ============================================================
        SECCIÓN: PROBLEMA
@@ -890,12 +896,13 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      padding: 18px 22px;
+      padding: 22px 26px;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
-      font-size: 14px;
+      font-size: 16px;
       color: var(--color-text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
+      font-weight: 400;
       position: relative;
       transition: transform var(--transition), border-color var(--transition);
     }
@@ -936,11 +943,11 @@
 
     .vs-label {
       font-family: var(--font-condensed);
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--color-text-muted);
+      color: var(--color-text);
       margin-bottom: 22px;
     }
 
@@ -948,22 +955,22 @@
       display: flex;
       align-items: center;
       gap: 13px;
-      padding: 13px 16px;
+      padding: 15px 20px;
       margin-bottom: 8px;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 500;
     }
 
     .paso.bad {
       background: rgba(220,53,53,0.07);
-      border: 1px solid rgba(220,53,53,0.18);
-      color: rgba(240,244,255,0.45);
+      border: 1px solid rgba(220,53,53,0.22);
+      color: #C0A0A0;
     }
-    .paso.bad .pi { color: rgba(220,80,80,0.6); }
+    .paso.bad .pi { color: #D05050; }
 
     .paso.ok {
       background: rgba(27,95,255,0.07);
-      border: 1px solid rgba(27,95,255,0.18);
+      border: 1px solid rgba(27,95,255,0.22);
       color: var(--color-text-muted);
     }
     .paso.ok .pi { color: var(--color-cyan); }
@@ -1023,14 +1030,14 @@
       font-family: var(--font-display);
       font-size: 52px;
       font-weight: 900;
-      color: rgba(27,95,255,0.1);
+      color: rgba(27,95,255,0.25);
       line-height: 1;
       margin-bottom: 16px;
     }
 
     .pilar-icon {
       width: 48px; height: 48px;
-      background: rgba(27,95,255,0.1);
+      background: rgba(27,95,255,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1041,7 +1048,7 @@
 
     .pilar-name {
       font-family: var(--font-condensed);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 900;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -1050,18 +1057,19 @@
     }
 
     .pilar-desc {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--color-text-muted);
       line-height: 1.75;
+      font-weight: 400;
     }
 
     .pilar-tag {
       display: inline-block;
       margin-top: 22px;
-      padding: 5px 14px;
-      background: rgba(0,200,232,0.08);
+      padding: 6px 16px;
+      background: rgba(0,200,232,0.14);
       font-family: var(--font-condensed);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -1135,8 +1143,8 @@
     .video-play-btn {
       width: 80px; height: 80px;
       border-radius: 50%;
-      background: rgba(27,95,255,0.15);
-      border: 2px solid rgba(0,200,232,0.4);
+      background: rgba(27,95,255,0.2);
+      border: 2px solid rgba(0,200,232,0.5);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1171,7 +1179,7 @@
 
     .video-placeholder-text {
       font-family: var(--font-condensed);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -1179,9 +1187,9 @@
     }
 
     .video-placeholder-sub {
-      font-size: 12px;
-      color: rgba(240,244,255,0.35);
-      font-weight: 300;
+      font-size: 14px;
+      color: var(--color-text-soft);
+      font-weight: 400;
     }
 
     /* Embed/iframe state (when video is loaded) */
@@ -1198,14 +1206,14 @@
     .video-caption {
       margin-top: 20px;
       text-align: center;
-      font-size: 13px;
+      font-size: 15px;
       color: var(--color-text-muted);
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .video-caption strong {
       color: var(--color-text);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* Corner brackets decorative */
@@ -1245,7 +1253,7 @@
       font-family: var(--font-display);
       font-size: 400px;
       font-weight: 900;
-      color: rgba(27,95,255,0.04);
+      color: rgba(27,95,255,0.1);
       line-height: 1;
       pointer-events: none;
       user-select: none;
@@ -1290,10 +1298,10 @@
     }
 
     .testi-quote {
-      font-size: 15px;
+      font-size: 17px;
       font-style: italic;
-      font-weight: 300;
-      color: var(--color-text);
+      font-weight: 400;
+      color: var(--color-text-muted);
       line-height: 1.8;
       margin-bottom: 28px;
     }
@@ -1320,14 +1328,15 @@
 
     .testi-name {
       font-family: var(--font-condensed);
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.08em;
+      color: var(--color-text);
     }
 
     .testi-role {
-      font-size: 12px;
-      color: var(--color-text-muted);
+      font-size: 14px;
+      color: var(--color-text-soft);
       margin-top: 2px;
     }
 
@@ -1415,31 +1424,33 @@
       padding: 10px 14px;
       background: rgba(7,15,30,0.55);
       border: 1px solid var(--color-border);
-      font-size: 12px;
+      font-size: 14px;
       color: var(--color-text-muted);
+      font-weight: 400;
     }
 
     .waldo-bio {
-      font-size: 16px;
+      font-size: 17px;
       color: var(--color-text-muted);
       line-height: 1.82;
+      font-weight: 400;
     }
 
     .waldo-bio strong {
       color: var(--color-text);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .waldo-blockquote {
       margin-top: 28px;
-      padding: 24px 28px;
-      background: rgba(27,95,255,0.07);
+      padding: 26px 30px;
+      background: rgba(27,95,255,0.09);
       border-left: 3px solid var(--color-accent);
-      font-size: 15px;
+      font-size: 17px;
       color: var(--color-text);
       font-style: italic;
-      line-height: 1.72;
-      font-weight: 300;
+      line-height: 1.75;
+      font-weight: 400;
     }
 
     /* ============================================================
@@ -1491,12 +1502,13 @@
     }
 
     .cta-content p {
-      font-size: 17px;
+      font-size: 19px;
       color: var(--color-text-muted);
-      max-width: 500px;
+      max-width: 520px;
       margin-inline: auto;
       margin-bottom: 48px;
       line-height: 1.7;
+      font-weight: 400;
     }
 
     .btn-primary {
@@ -1532,8 +1544,9 @@
 
     .cta-note {
       margin-top: 20px;
-      font-size: 12px;
-      color: var(--color-text-muted);
+      font-size: 14px;
+      color: var(--color-text-soft);
+      font-weight: 400;
     }
 
     /* ============================================================
@@ -1555,8 +1568,8 @@
     }
 
     .footer-copy {
-      font-size: 13px;
-      color: var(--color-text-muted);
+      font-size: 14px;
+      color: var(--color-text-soft);
     }
 
     .footer-links {
@@ -1566,11 +1579,11 @@
 
     .footer-links a {
       font-family: var(--font-condensed);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--color-text-muted);
+      color: var(--color-text-soft);
       transition: color var(--transition);
     }
 
