@@ -1556,8 +1556,24 @@
     .vsl-header h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 38px); font-weight: 800; color: var(--color-text); line-height: 1.15; }
     .vsl-header h2 em { font-style: normal; color: var(--color-cyan); }
     .vsl-wrapper { max-width: 860px; margin: 0 auto; }
-    .vsl-inner { background: #000; overflow: hidden; line-height: 0; }
-    .vsl-inner video { width: 100%; height: auto; display: block; }
+    
+    /* MODIFICADO: Ajustes responsive para iframe 16:9 en VSL */
+    .vsl-inner { 
+      background: #000; 
+      overflow: hidden; 
+      position: relative; 
+      padding-bottom: 56.25%; 
+      height: 0; 
+    }
+    .vsl-inner iframe { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      border: none; 
+    }
+    
     .vsl-tagline { text-align: center; margin-top: 20px; font-family: var(--font-condensed); font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-soft); }
     .vsl-tagline span { color: var(--color-cyan); }
     .vsl-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--color-accent), var(--color-cyan), transparent); opacity: 0.25; margin-top: 60px; }
@@ -2109,14 +2125,7 @@
       </div>
       <div class="vsl-wrapper" data-reveal>
         <div class="vsl-inner">
-          <video id="hero-video-1" controls preload="metadata" playsinline crossorigin="anonymous">
-            <source src="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" type="video/mp4">
-            <div style="color: white; text-align: center; padding: 20px;">
-              <p>Tu navegador no soporta video. <br>
-                 <a href="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" style="color: #00C8E8; text-decoration: underline;">Descarga el video aquí</a>
-              </p>
-            </div>
-          </video>
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nWPV9u7tBAA?rel=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="vsl-tagline">
           <span>iCONCRETA</span> · Sistema Inteligente de Control Inmobiliario
@@ -2244,14 +2253,7 @@
 
       <div class="video-wrapper" data-reveal>
         <div class="video-container">
-          <video id="hero-video-2" controls playsinline style="width: 100%; height: 100%; object-fit: cover;" crossorigin="anonymous">
-            <source src="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" type="video/mp4">
-            <div style="color: white; text-align: center; padding: 20px;">
-              <p>Tu navegador no soporta video. <br>
-                 <a href="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" style="color: #00C8E8; text-decoration: underline;">Descarga el video aquí</a>
-              </p>
-            </div>
-          </video>
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nWPV9u7tBAA?rel=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
         </div>
 
         <div class="video-caption">
@@ -2745,32 +2747,6 @@
       });
     }
     } catch(e) {}
-
-    // ============================================================
-    //  DIAGNÓSTICO Y FALLBACK PARA VIDEOS DE DROPBOX
-    // ============================================================
-    document.addEventListener('DOMContentLoaded', function() {
-      const videos = [document.getElementById('hero-video-1'), document.getElementById('hero-video-2')];
-      
-      videos.forEach(video => {
-        if (video) {
-          video.addEventListener('error', function(e) {
-            console.error('Error cargando video de Dropbox:', e);
-            const container = video.parentElement;
-            container.innerHTML = `
-              <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #112040; color: white; text-align: center; padding: 20px;">
-                <p>⚠️ No se pudo cargar el video desde Dropbox.<br>
-                   <a href="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" 
-                      style="color: #00C8E8; text-decoration: underline; display: block; margin-top: 10px;">
-                      Descargar video manualmente
-                   </a>
-                </p>
-              </div>
-            `;
-          }, true);
-        }
-      });
-    });
   </script>
 
 </body>
