@@ -2109,8 +2109,13 @@
       </div>
       <div class="vsl-wrapper" data-reveal>
         <div class="vsl-inner">
-          <video controls preload="metadata" playsinline>
-            <source src="vsl-iconcreta.mp4" type="video/mp4">
+          <video id="hero-video-1" controls preload="metadata" playsinline crossorigin="anonymous">
+            <source src="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" type="video/mp4">
+            <div style="color: white; text-align: center; padding: 20px;">
+              <p>Tu navegador no soporta video. <br>
+                 <a href="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" style="color: #00C8E8; text-decoration: underline;">Descarga el video aquí</a>
+              </p>
+            </div>
           </video>
         </div>
         <div class="vsl-tagline">
@@ -2239,10 +2244,14 @@
 
       <div class="video-wrapper" data-reveal>
         <div class="video-container">
-          <video controls playsinline style="width: 100%; height: 100%; object-fit: cover;">
-  <source src="vsl-iconcreta.mp4" type="video/mp4">
-  Tu navegador no soporta la reproducción de video.
-</video>
+          <video id="hero-video-2" controls playsinline style="width: 100%; height: 100%; object-fit: cover;" crossorigin="anonymous">
+            <source src="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" type="video/mp4">
+            <div style="color: white; text-align: center; padding: 20px;">
+              <p>Tu navegador no soporta video. <br>
+                 <a href="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" style="color: #00C8E8; text-decoration: underline;">Descarga el video aquí</a>
+              </p>
+            </div>
+          </video>
         </div>
 
         <div class="video-caption">
@@ -2736,6 +2745,32 @@
       });
     }
     } catch(e) {}
+
+    // ============================================================
+    //  DIAGNÓSTICO Y FALLBACK PARA VIDEOS DE DROPBOX
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = [document.getElementById('hero-video-1'), document.getElementById('hero-video-2')];
+      
+      videos.forEach(video => {
+        if (video) {
+          video.addEventListener('error', function(e) {
+            console.error('Error cargando video de Dropbox:', e);
+            const container = video.parentElement;
+            container.innerHTML = `
+              <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #112040; color: white; text-align: center; padding: 20px;">
+                <p>⚠️ No se pudo cargar el video desde Dropbox.<br>
+                   <a href="https://www.dropbox.com/scl/fo/7bul44e6yncjpubl5tdpg/AJ4W95vg4-WHujcUO2kUC2A/VSL%20ICONCRETA.mp4?rlkey=dq73863r4snyvcgwms1sui7ex&st=s1lokm5n&dl=1" 
+                      style="color: #00C8E8; text-decoration: underline; display: block; margin-top: 10px;">
+                      Descargar video manualmente
+                   </a>
+                </p>
+              </div>
+            `;
+          }, true);
+        }
+      });
+    });
   </script>
 
 </body>
